@@ -1,8 +1,96 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
 }
 
-a {
-  color: #00B7FF;
+.profile-img {
+    width: 100px;
+    height: 100px;
+}
+
+.media
+{
+    /*box-shadow:0px 0px 4px -2px #000;*/
+    margin: 0 0;
+    padding:20px;
+}
+
+.dp
+{
+    border:10px solid #eee;
+    transition: all 0.2s ease-in-out;
+}
+
+.dp:hover
+{
+    border:2px solid #eee;
+    transform:rotate(360deg);
+    -ms-transform:rotate(360deg);  
+    -webkit-transform:rotate(360deg);  
+    /*-webkit-font-smoothing:antialiased;*/
+}
+
+
+.btn-circle {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  padding: 3px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+  margin: 0 1px;
+}
+
+#detail {
+    padding: 0;
+}
+
+#detail .radar-type {
+    font-size: 10px;
+    color: #777;
+}
+
+span.text {
+    font-size: 11px;
+    color: #777;
+}
+
+#evalBtn {
+    font-size: 11px;
+}
+
+#meHead 
+{
+    padding: 20px 0;
+}
+
+#radar {
+    padding: 0;
+}
+
+.slider.slider-horizontal{
+    width: 150px;
+    margin:0 15px 0 5px;
+}
+
+.slider-selection {
+    background: #149BDF;
+}
+
+p.slideP {
+    margin:20px 0;
+}
+
+span.tag {
+    float:left;
+    margin:2px 5px;
+}
+
+span.animation {
+    position: absolute;
+    z-index:9999;
 }

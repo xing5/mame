@@ -1,0 +1,120 @@
+doctype html
+html(lang='en')
+head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Marry me!
+
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel='stylesheet')
+    link(href='stylesheets/bootstrap-slider.min.css', rel='stylesheet')
+    link(href='stylesheets/animate+animo.css', rel='stylesheet')
+    link(href='stylesheets/style.css', rel='stylesheet')
+    script(src='javascripts/ga.js')
+  body(style='background:#fafafa')
+    .container
+      .row
+        .col-xs-12
+          .media
+            a.pull-left(href='#')
+                img.media-object.dp.img-circle.profile-img(src='images/me.jpg')
+            #meHead.media-body
+                h4.media-heading 伍行 
+                    small 1988/02/29
+                hr(style='margin:8px auto')
+
+                a.btn.btn-default.btn-circle(href='#') 
+                    i.fa.social-icon.fa-qq
+                a.btn.btn-default.btn-circle(href='#')
+                    i.fa.social-icon.fa-facebook
+                a.btn.btn-default.btn-circle(href='#')
+                    i.fa.social-icon.fa-instagram
+                a.btn.btn-default.btn-circle(href='#')
+                    i.fa.social-icon.fa-envelope
+                a.btn.btn-default.btn-circle(href='#')
+                    i.fa.social-icon.fa-linkedin
+      .row
+        .col-xs-12
+          .panel.panel-default
+              .panel-body
+                #radar.col-xs-8
+                #detail.col-xs-4
+                  p  
+                    span.radar-type 品德 
+                    span.label.label-warning 万里挑一
+                  p  
+                    span.radar-type 智商 
+                    span.label.label-warning 万里挑一
+                  p  
+                    span.radar-type 身材 
+                    span.label.label-warning 万里挑一
+                  p  
+                    span.radar-type 美貌 
+                    span.label.label-warning 万里挑一
+                  p  
+                    span.radar-type 工作 
+                    span.label.label-warning 万里挑一
+              ul.list-group
+                li.list-group-item
+                  span.text 请就伍行在你们心中的伟岸形象如实评价。
+                  a#evalBtn.button.btn.btn-primary(href="#myModal", role="button", data-toggle="modal") 打分
+      .row
+        .col-xs-12
+          .panel.panel-default
+            .panel-heading
+              span.text 朋友们眼中的伍行：
+            .panel-body
+              span#tag1.label.label-danger.tag 你是猴子请来的逗逼吗 | 123
+              span#tag2.label.label-danger.tag 你是猴子
+              span#tag3.label.label-danger.tag 你是猴
+              span#tag4.label.label-danger.tag 你是
+              span#tag5.label.label-danger.tag 你是猴子
+              span#tag6.label.label-danger.tag 你是猴
+              span#tag7.label.label-danger.tag 你是猴子请来
+              span#tag8.label.label-danger.tag 你是猴
+              span#tag9.label.label-danger.tag 你是
+              span#tag10.label.label-danger.tag 你是猴子
+
+    span#plusone.animation.label-danger.label(style='display:none;') +1
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          form(name='radar-form', action='/submit', method='post')
+            input(type='hidden' name='id' value='1')
+            .modal-header
+                button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                h5#myModalLabel 请依中华传统择偶标准对伍行进行评价：
+            .modal-body
+                  p.slideP  
+                    span.radar-type 品德 
+                    input#morality(data-slider-id='moralitySlider' type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name='morality')
+                    span#moralityLabel.label.label-warning 德高望重
+                  p.slideP
+                    span.radar-type 智商 
+                    input#intelligence(data-slider-id='intelligenceSlider' type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name='intelligence')
+                    span#intelligenceLabel.label.label-warning 万中无一
+                  p.slideP  
+                    span.radar-type 身材 
+                    input#shape(data-slider-id='shapeSlider' type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name='shape')
+                    span#shapeLabel.label.label-warning 孙杨
+                  p.slideP  
+                    span.radar-type 美貌 
+                    input#look(data-slider-id='lookSlider' type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name='look')
+                    span#lookLabel.label.label-warning 吴彦祖
+                  p.slideP  
+                    span.radar-type 工作 
+                    input#career(data-slider-id='careerSlider' type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name='career')
+                    span#careerLabel.label.label-warning 富甲一方
+            .modal-footer
+                button.btn(data-dismiss='modal', aria-hidden='true') 关闭
+                button.btn.btn-primary(type='submit') 提交
+
+    script(src='https://code.jquery.com/jquery-2.1.1.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+    script(src='javascripts/bootstrap-slider.min.js')
+    script(src='http://code.highcharts.com/highcharts.js')
+    script(src='http://code.highcharts.com/highcharts-more.js')
+    script(src='javascripts/animo.js')
+    script(src='javascripts/profile.js')
