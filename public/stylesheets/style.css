@@ -1,6 +1,6 @@
 .full {
     height:100%;
-    background: url('/images/mame-hm-gb.png') no-repeat top center ;
+    background: url('/images/mame-hm-gb.jpg') no-repeat top center ;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -69,6 +69,17 @@
     /*-webkit-font-smoothing:antialiased;*/
 }
 
+
+.btn-circle-small {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  padding: 3px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+  margin: 0 1px;
+}
 
 .btn-circle {
   width: 25px;
@@ -145,6 +156,22 @@ span.animation {
     z-index:9999;
 }
 
+.rose {
+    position:absolute;
+    top: 0;
+    left: 8px;
+    -webkit-transform: rotate(-18deg);
+    -moz-transform: rotate(-18deg);
+    -ms-transform: rotate(-18deg);
+    -o-transform: rotate(-18deg);
+    transform: rotate(-18deg);
+}
+
+p.roseCounter {
+    font-size:16px;
+    font-weight: 200;
+}
+
 @-webkit-keyframes rotateFadeOutDown1 {
   0% {
     opacity: 1;
@@ -152,8 +179,8 @@ span.animation {
 
   100% {
     opacity: 0.5;
-    -webkit-transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, 180deg);
-            transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, 180deg);
+    -webkit-transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, 179deg);
+            transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, 179deg);
   }
 }
 
@@ -164,8 +191,8 @@ span.animation {
 
   100% {
     opacity: 0.5;
-    -webkit-transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, 180deg);
-            transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, 180deg);
+    -webkit-transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, 179deg);
+            transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, 179deg);
   }
 }
 
@@ -181,8 +208,8 @@ span.animation {
 
   100% {
     opacity: 0.5;
-    -webkit-transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, -180deg);
-            transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, -180deg);
+    -webkit-transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, -179deg);
+            transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, -179deg);
   }
 }
 
@@ -193,8 +220,8 @@ span.animation {
 
   100% {
     opacity: 0.5;
-    -webkit-transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, -180deg);
-            transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, -180deg);
+    -webkit-transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, -179deg);
+            transform: translate3d(0, 400px, 0) rotate3d(0, 0, 1, -179deg);
   }
 }
 

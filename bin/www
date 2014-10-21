@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-reuqire('../newrelic');
+require('../newrelic');
 var debug = require('debug')('mame');
 var app = require('../app');
 

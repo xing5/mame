@@ -18,17 +18,20 @@ head
               span.onImage 程娅苹，
             p
               span.onImage 嫁给我吧！
-            p
+            p.roseCounter
               span.onImage 
                 span#roseNum 103
                 |  x 
-                img#roseBtn(src='images/rose.png')
-        
-    .btn-group-vertical.leftbot
-        a.btn.btn-primary(href='/me') 围观我
-        a.btn.btn-success(href='/her') 围观她
-        a.btn.btn-info(href='/story') 我们的故事
-        a.btn.btn-warning(href='/letter') 宝贝亲启
+                img#roseIcon(src='images/rose.png')
+    
+    .container.leftbot
+        .btn-group-vertical
+            a.btn.btn-primary(href='/me') 围观我
+            a.btn.btn-success(href='/her') 围观她
+            a.btn.btn-info(href='/story') 我们的故事
+            a.btn.btn-warning(href='/letter') 宝贝亲启
+            a#roseBtn.btn.btn-danger(href='javascript:void(0)') 祝福
+                img.rose(src='images/rose.png')
 
     script(src='https://code.jquery.com/jquery-2.1.1.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
