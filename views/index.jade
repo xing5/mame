@@ -1,15 +1,37 @@
-extends layout
+doctype html
+html.fullheight(lang='en')
+head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Marry me!
 
-block content
-    .jumbotron
-      .container
-        h1 程娅苹，
-        p
-          | 嫁给我吧！
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')
+    link(href='stylesheets/animate+animo.css', rel='stylesheet')
+    link(href='stylesheets/style.css', rel='stylesheet')
+  body.fullheight
+    #roseCanvas
+    .container.full
+        .jumbotron.nobackground.white
+            h1
+              span.onImage 程娅苹，
+            p
+              span.onImage 嫁给我吧！
+            p
+              span.onImage 
+                span#roseNum 103
+                |  x 
+                img#roseBtn(src='images/rose.png')
         
-        .btn-group-vertical
-            a.btn.btn-primary(href='/me') 围观我
-            a.btn.btn-success(href='/her') 围观她
-            a.btn.btn-info(href='/story') 我们的故事
-            a.btn.btn-warning(href='/letter') 程亚萍亲启
+    .btn-group-vertical.leftbot
+        a.btn.btn-primary(href='/me') 围观我
+        a.btn.btn-success(href='/her') 围观她
+        a.btn.btn-info(href='/story') 我们的故事
+        a.btn.btn-warning(href='/letter') 宝贝亲启
 
+    script(src='https://code.jquery.com/jquery-2.1.1.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+    script(src='javascripts/animo.js')
+    script(src='javascripts/home.js')
+    script(src='javascripts/ga.js')

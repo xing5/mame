@@ -43,19 +43,19 @@ head
                 #detail.col-xs-4
                   p  
                     span.radar-type 品德 
-                    span.label.label-warning 万里挑一
+                    span#moralityRst.label.label-warning 万里挑一
                   p  
                     span.radar-type 智商 
-                    span.label.label-warning 万里挑一
+                    span#intelligenceRst.label.label-warning 万里挑一
                   p  
                     span.radar-type 身材 
-                    span.label.label-warning 万里挑一
+                    span#shapeRst.label.label-warning 万里挑一
                   p  
                     span.radar-type 美貌 
-                    span.label.label-warning 万里挑一
+                    span#lookRst.label.label-warning 万里挑一
                   p  
                     span.radar-type 工作 
-                    span.label.label-warning 万里挑一
+                    span#careerRst.label.label-warning 万里挑一
               ul.list-group
                 li.list-group-item
                   span.text 请就伍行在你们心中的伟岸形象如实评价。
@@ -89,24 +89,24 @@ head
             .modal-body
                   p.slideP  
                     span.radar-type 品德 
+                    span#moralityLabel.label.label-warning.radar-tag 德高望重
                     input#morality(data-slider-id='moralitySlider' type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name='morality')
-                    span#moralityLabel.label.label-warning 德高望重
                   p.slideP
                     span.radar-type 智商 
+                    span#intelligenceLabel.label.label-warning.radar-tag 万中无一
                     input#intelligence(data-slider-id='intelligenceSlider' type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name='intelligence')
-                    span#intelligenceLabel.label.label-warning 万中无一
                   p.slideP  
                     span.radar-type 身材 
+                    span#shapeLabel.label.label-warning.radar-tag 孙杨
                     input#shape(data-slider-id='shapeSlider' type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name='shape')
-                    span#shapeLabel.label.label-warning 孙杨
                   p.slideP  
                     span.radar-type 美貌 
+                    span#lookLabel.label.label-warning.radar-tag 吴彦祖
                     input#look(data-slider-id='lookSlider' type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name='look')
-                    span#lookLabel.label.label-warning 吴彦祖
                   p.slideP  
                     span.radar-type 工作 
+                    span#careerLabel.label.label-warning.radar-tag 富甲一方
                     input#career(data-slider-id='careerSlider' type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name='career')
-                    span#careerLabel.label.label-warning 富甲一方
             .modal-footer
                 button.btn(data-dismiss='modal', aria-hidden='true') 关闭
                 button.btn.btn-primary(type='submit') 提交
