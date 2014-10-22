@@ -1,0 +1,3 @@
+$(function() {
+    $('#pwdBox').modal('show');
+})

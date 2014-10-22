@@ -91,7 +91,6 @@ $(function() {
     });
 
     $('.tag').on('click', function(evt) {
-        console.log(evt);
         $('#plusone').css({top: evt.pageY-10, left:evt.pageX}).show()
             .animo({animation: 'fadeOutUp', duration: 0.5}, function(){
                 $('#plusone').hide();

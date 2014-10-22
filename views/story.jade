@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html.fullheight(lang='en')
 head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
@@ -10,8 +10,30 @@ head
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')
     link(href='stylesheets/style.css', rel='stylesheet')
     script(src='javascripts/ga.js')
-  body
-    .container
-        .h1 Story
+  body.fullheight
+    .container.fullheight.nopadding
+        #carouselStory.carousel.fullheight.slide(data-ride='carousel')
+            ol.carousel-indicators
+                li.active(data-target='#carouselStory',data-slide-to='0')
+                li(data-target='#carouselStory',data-slide-to='1')
+                li(data-target='#carouselStory',data-slide-to='2')
+            .carousel-inner.fullheight
+                .item.active
+                    img.img-responsive(src='images/mame-hm-gb.jpg', alt='Love Story')
+                    .carousel-caption
+                        | cap-1
+                .item
+                    img.img-responsive(src='images/mame-hm-gb-flip.jpg', alt='Love Story')
+                    .carousel-caption
+                        | cap-2
+                .item
+                    img.img-responsive(src='images/mame-hm-gb.jpg', alt='Love Story')
+                    .carousel-caption
+                        | cap-3
+            a.left.carousel-control(href='#carouselStory', role='button', data-slide='prev')
+                span.glyphicon.glyphicon-chevron-left
+            a.right.carousel-control(href='#carouselStory', role='button', data-slide='next')
+                span.glyphicon.glyphicon-chevron-right
+
     script(src='https://code.jquery.com/jquery-2.1.1.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')

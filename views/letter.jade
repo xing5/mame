@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html.fullheight(lang='en')
 head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
@@ -10,8 +10,37 @@ head
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')
     link(href='stylesheets/style.css', rel='stylesheet')
     script(src='javascripts/ga.js')
-  body
-    .container
-        .h1 letter
+  body.fullheight(style="background-color:#dcdcdc")
+    .container.fullheight(style="padding:5px")
+        .letterbox
+            p  
+            p  
+            p  
+            p  
+            p 仅供程娅苹查阅，谢谢 ^_^
+            p  
+            p 
+              a.btn.button-default(href='/') 返回
+            p  
+            p  
+            p  
+
+    #pwdBox.modal.fade(tabindex='-1', role='dialog', aria-labelledby='tagBoxLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                h5#myModalLabel 请输入伍行的银行卡密码：
+            .modal-body
+                  p  
+                    form(role='form')
+                        .form-group
+                            .label.sr-only(for='textField') 
+                            input#textField.form-control(type='password')
+            .modal-footer
+                a.btn(data-dismiss='modal', aria-hidden='true') 返回
+                button#pwdBtn.btn.btn-primary(type='submit',data-toggle='modal',href='#pwdBox') 提交
+
     script(src='https://code.jquery.com/jquery-2.1.1.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+    script(src='javascripts/letter.js')

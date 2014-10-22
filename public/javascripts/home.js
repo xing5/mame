@@ -6,6 +6,7 @@ $(function() {
     //         keep:true,
     //         timing:"ease-in-out"
     // });
+    $('#roseNum').text($('#roseCanvas').outerHeight());
     $('#roseBtn').on('click', function(e) {
         $('#roseIcon').animo({
             animation: 'tada',
