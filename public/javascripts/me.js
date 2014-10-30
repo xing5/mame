@@ -135,7 +135,7 @@ $(function() {
         $.getJSON('/api/get_score/me', function(rst){
             var avg_score = rst.data;
             hchart.series[0].setData([avg_score.morality, avg_score.intelligence, avg_score.shape, avg_score.look, avg_score.career]);
-            refreshLabels(score.data);
+            refreshLabels(rst.data);
         });
 
     });
