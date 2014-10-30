@@ -6,8 +6,9 @@ $(function() {
     //         keep:true,
     //         timing:"ease-in-out"
     // });
-    $('#roseNum').text($('#roseCanvas').outerHeight());
+    //$('#roseNum').text($('#roseCanvas').outerHeight());
     $('#roseBtn').on('click', function(e) {
+        $.post("/api/add_rose");
         $('#roseIcon').animo({
             animation: 'tada',
             duration: 2,

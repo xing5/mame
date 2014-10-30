@@ -25,15 +25,15 @@ head
                     small 1988/02/29
                 hr(style='margin:8px auto')
 
-                a.btn.btn-default.btn-circle-small(href='#') 
+                a.btn.btn-default.btn-circle-small(href='http://xingwu.qzone.qq.com/') 
                     i.fa.social-icon.fa-qq
-                a.btn.btn-default.btn-circle-small(href='#')
+                a.btn.btn-default.btn-circle-small(href='https://www.facebook.com/wuxing')
                     i.fa.social-icon.fa-facebook
-                a.btn.btn-default.btn-circle-small(href='#')
+                a.btn.btn-default.btn-circle-small(href='http://instagram.com/calka')
                     i.fa.social-icon.fa-instagram
-                a.btn.btn-default.btn-circle-small(href='#')
+                a.btn.btn-default.btn-circle-small(href='mailto:xingwu.cn@gmail.com')
                     i.fa.social-icon.fa-envelope
-                a.btn.btn-default.btn-circle-small(href='#')
+                a.btn.btn-default.btn-circle-small(href='https://www.linkedin.com/in/xingwu')
                     i.fa.social-icon.fa-linkedin
       .row
         .col-xs-12
@@ -83,8 +83,8 @@ head
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
       .modal-dialog
         .modal-content
-          form(name='radar-form', action='/submit', method='post')
-            input(type='hidden' name='id' value='1')
+          form(id='radar-form', action='/api/set_score', method='post')
+            input(id='scoreId' type='hidden' name='id' value='me')
             .modal-header
                 button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
                 h5#myModalLabel 请依中华传统择偶标准对伍行进行评价：

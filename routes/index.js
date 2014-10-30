@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../modules/db')
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { roseNum: 0 });
+    db.getRose(function(num){
+        res.render('index', { roseNum: num?num:0});
+    });
 });
 
 router.get('/me', function(req, res) {
