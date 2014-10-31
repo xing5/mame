@@ -25,13 +25,13 @@ head
                     small 1988/05/13
                 hr(style='margin:8px auto')
 
-                a.btn.btn-default.btn-circle-small(href='#')
+                a.btn.btn-default.btn-circle-small(href='https://www.facebook.com/emily.ching.16')
                     i.fa.social-icon.fa-facebook
-                a.btn.btn-default.btn-circle-small(href='#')
+                a.btn.btn-default.btn-circle-small(href='http://instagram.com/emilychingx')
                     i.fa.social-icon.fa-instagram
                 a.btn.btn-default.btn-circle-small(href='#')
                     i.fa.social-icon.fa-envelope
-                a.btn.btn-default.btn-circle-small(href='#')
+                a.btn.btn-default.btn-circle-small(href='https://www.linkedin.com/in/yapingcheng')
                     i.fa.social-icon.fa-linkedin
       .row
         .col-xs-12
@@ -64,34 +64,24 @@ head
             .panel-heading
               span.text 朋友们眼中的程娅苹：
               button.btn.btn-primary.alignright(href="#tagBox", role="button", data-toggle="modal") 添加
-            .panel-body
-              span#tag1.label.label-danger.tag 你是猴子请来的逗逼吗 | 123
-              span#tag2.label.label-danger.tag 你是猴子
-              span#tag3.label.label-danger.tag 你是猴
-              span#tag4.label.label-danger.tag 你是
-              span#tag5.label.label-danger.tag 你是猴子
-              span#tag6.label.label-danger.tag 你是猴
-              span#tag7.label.label-danger.tag 你是猴子请来
-              span#tag8.label.label-danger.tag 你是猴
-              span#tag9.label.label-danger.tag 你是
-              span#tag10.label.label-danger.tag 你是猴子
+            #comments.panel-body
 
     span#plusone.animation.label-danger.label(style='display:none;') +1
     #tagBox.modal.fade(tabindex='-1', role='dialog', aria-labelledby='tagBoxLabel', aria-hidden='true')
       .modal-dialog
         .modal-content
+          form#comment-form(role='form')
             .modal-header
                 button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
                 h5#myModalLabel 请用10字以内的词语描述程娅苹：
             .modal-body
                   p  
-                    form(role='form')
-                        .form-group
-                            .label.sr-only(for='textField') 
-                            input#textField.form-control(type='text',placeholder='提示：请客观描述')
+                    .form-group
+                        .label.sr-only(for='textField') 
+                        input#textField.form-control(type='text',placeholder='提示：请客观描述')
             .modal-footer
                 button.btn(data-dismiss='modal', aria-hidden='true') 关闭
-                button#tagBtn.btn.btn-primary(type='submit',data-toggle='modal',href='#tagBox') 提交
+                button#tagBtn.btn.btn-primary(type='submit') 提交
 
     script(src='https://code.jquery.com/jquery-2.1.1.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
@@ -99,4 +89,5 @@ head
     script(src='http://code.highcharts.com/highcharts.js')
     script(src='http://code.highcharts.com/highcharts-more.js')
     script(src='javascripts/animo.js')
+    script(src='javascripts/rainbowvis.js')
     script(src='javascripts/her.js')

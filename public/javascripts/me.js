@@ -16,6 +16,18 @@ $(function() {
         $('#careerRst').text(careerStrArray[Math.floor(score.career)]);
     }
 
+    function tagEventHandler(evt) {
+        $('#plusone').css({top: evt.pageY-10, left:evt.pageX}).show()
+            .animo({animation: 'fadeOutUp', duration: 0.5}, function(){
+                $('#plusone').hide();
+            });
+        var orig = $(this).text().split(' | ');
+        if (orig.length === 2 && parseInt(orig[1])) {
+            $(this).text(orig[0] + ' | ' + (parseInt(orig[1])+1) );
+        }
+        $.post('/api/add_comment', {id: 'me', comment: orig[0]});
+    }
+
     $.getJSON('/api/get_score/me', function(score){
 
         $('#radar').highcharts({
@@ -88,6 +100,29 @@ $(function() {
         });
         refreshLabels(score.data);
     });
+
+    $.getJSON('/api/get_comments/me', function(rsp){
+        if (rsp.ret === 0) {
+
+            var gradient = new Rainbow();
+            gradient.setSpectrum('#a3a3a3', '#d9534f');
+            var maxNum = null;
+            $.each(rsp.data, function(key, val){
+                if (!maxNum) {
+                    maxNum = val;
+                    gradient.setNumberRange(0, val);    
+                }
+                var tag = $("<span>", {
+                    class: "label tag"
+                })
+                tag.css({'background-color': '#'+gradient.colorAt(val)});
+                tag.text(key + ' | ' + val);
+                tag.appendTo('#comments');
+            });
+        }
+
+        $('.tag').on('click', tagEventHandler);
+    });
     $('#morality').slider();
     $('#morality').on('slideStop', function(evt) {
         $('#moralityLabel').text(moralityStrArray[evt.value]);
@@ -140,10 +175,16 @@ $(function() {
 
     });
 
-    $('.tag').on('click', function(evt) {
-        $('#plusone').css({top: evt.pageY-10, left:evt.pageX}).show()
-            .animo({animation: 'fadeOutUp', duration: 0.5}, function(){
-                $('#plusone').hide();
-            });
-    })
+    $('#comment-form').submit(function(evt) {
+        event.preventDefault();
+        $.post('/api/add_comment', {id:'me', comment:$('#textField').val()});
+        $('#tagBox').modal('hide');
+
+        var tag = $("<span>", {
+            class: "label label-warning tag"
+        })
+        tag.text($('#textField').val() + ' | ' + 1);
+        tag.on('click', tagEventHandler);
+        tag.appendTo('#comments');
+    });
 });

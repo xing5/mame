@@ -48,7 +48,7 @@ MameDB.incrRose = function() {
 MameDB.getScore = function(id, name, callback) {
     var val = 0;
     redis.hgetall(MameDB.key(name+'-'+id), function(err, res){
-        debug('Value of ' + MameDB.key(name+'-'+id) + 'is ', res);
+        debug('Value of ' + MameDB.key(name+'-'+id) + ' is ', res);
         if (res) {
             var totalNum = 0;
             var totalVal = 0;
@@ -100,6 +100,34 @@ MameDB.setAllScore = function(id, score){
         redis.hincrby(this.key('career-'+id), score.career, 1);
     }
 };
+
+MameDB.addComment = function(id, comment) {
+    redis.zincrby(this.key('comment-'+id), 1, comment);
+}
+
+MameDB.getComments = function(id, callback) {
+    redis.zrevrange([this.key('comment-'+id), 0, 100, 'WITHSCORES'], function(err, rst) {
+        var comments = {};
+        if (rst) {
+            for (var i = 0; i + 1 < rst.length; i+=2) {
+                comments[rst[i]] = rst[i+1];
+            }
+        }
+        callback(comments);
+    });
+}
+
+MameDB.getLetter = function(password, callback) {
+    redis.get(MameDB.key('letter-password'), function(err, res){
+        if (password == res) {
+            redis.get(MameDB.key('letter-content'), function(err, letter){
+                callback({ret:0, data:letter});
+            });
+        } else {
+            callback({ret:-1});
+        }
+    });
+}
 
 module.exports = MameDB;
 

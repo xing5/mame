@@ -33,6 +33,22 @@ describe('MameDB', function() {
             done();
         });
     });
+
+    it('addComment() should work properly', function(done){
+        mamedb.addComment('me', '打不死的小强');
+        mamedb.addComment('me', '好好玩');
+        mamedb.addComment('me', '你爱我吗');
+        mamedb.addComment('me', '好好玩');
+        mamedb.addComment('me', '好好玩');
+        done();
+    });
+
+    it('getComments() should work properly', function(done){
+        mamedb.getComments('me', function(rst){
+            console.log(rst);
+            done();
+        });
+    });
 });
 
 

@@ -67,17 +67,7 @@ head
                 span.text 朋友们眼中的伍行：
                 button.btn.btn-primary.alignright(href="#tagBox", role="button", data-toggle="modal") 添加
 
-            .panel-body
-              span#tag1.label.label-danger.tag 你是猴子请来的逗逼吗 | 123
-              span#tag2.label.label-danger.tag 你是猴子
-              span#tag3.label.label-danger.tag 你是猴
-              span#tag4.label.label-danger.tag 你是
-              span#tag5.label.label-danger.tag 你是猴子
-              span#tag6.label.label-danger.tag 你是猴
-              span#tag7.label.label-danger.tag 你是猴子请来
-              span#tag8.label.label-danger.tag 你是猴
-              span#tag9.label.label-danger.tag 你是
-              span#tag10.label.label-danger.tag 你是猴子
+            #comments.panel-body
 
     span#plusone.animation.label-danger.label(style='display:none;') +1
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
@@ -117,18 +107,18 @@ head
     #tagBox.modal.fade(tabindex='-1', role='dialog', aria-labelledby='tagBoxLabel', aria-hidden='true')
       .modal-dialog
         .modal-content
+          form#comment-form(role='form')
             .modal-header
                 button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
                 h5#myModalLabel 请用10字以内的词语描述伍行：
             .modal-body
                   p  
-                    form(role='form')
                         .form-group
                             .label.sr-only(for='textField') 
                             input#textField.form-control(type='text',placeholder='提示：英明神武，虚怀若谷等')
             .modal-footer
                 button.btn(data-dismiss='modal', aria-hidden='true') 关闭
-                button#tagBtn.btn.btn-primary(type='submit',data-toggle='modal',href='#tagBox') 提交
+                button#tagBtn.btn.btn-primary(type='submit') 提交
 
     script(src='https://code.jquery.com/jquery-2.1.1.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
@@ -136,4 +126,5 @@ head
     script(src='http://code.highcharts.com/highcharts.js')
     script(src='http://code.highcharts.com/highcharts-more.js')
     script(src='javascripts/animo.js')
+    script(src='javascripts/rainbowvis.js')
     script(src='javascripts/me.js')
