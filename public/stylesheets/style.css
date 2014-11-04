@@ -1,6 +1,6 @@
 .full {
     height:100%;
-    background: url('/images/mame-hm-gb.jpg') no-repeat top center ;
+    background: url('/images/bg.jpg') no-repeat top center ;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -286,4 +286,7 @@ button.alignright, a.alignright{
     -ms-transform: skew(5deg) rotate(5deg);
     -o-transform: skew(5deg) rotate(5deg);
     transform: skew(5deg) rotate(5deg);
+}
+.carousel-caption a {
+    color: #cfcfcf;
 }
