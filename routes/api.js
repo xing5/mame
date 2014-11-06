@@ -2,7 +2,12 @@ var express = require('express');
 var router = express.Router();
 var db = require('../modules/db');
 
-/* GET users listing. */
+router.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "proposal.xingwu.me");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
+
 router.all('/add_rose', function(req, res) {
     db.incrRose();
     res.send({ret:0});
