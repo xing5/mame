@@ -25,10 +25,10 @@ $(function() {
         if (orig.length === 2 && parseInt(orig[1])) {
             $(this).text(orig[0] + ' | ' + (parseInt(orig[1])+1) );
         }
-        $.post('/api/add_comment', {id: 'me', comment: orig[0]});
+        $.post('http://api.xingwu.me/proposal/add_comment', {id: 'me', comment: orig[0]});
     }
 
-    $.getJSON('/api/get_score/me', function(score){
+    $.getJSON('http://api.xingwu.me/proposal/get_score/me', function(score){
 
         $('#radar').highcharts({
 
@@ -101,7 +101,7 @@ $(function() {
         refreshLabels(score.data);
     });
 
-    $.getJSON('/api/get_comments/me', function(rsp){
+    $.getJSON('http://api.xingwu.me/proposal/get_comments/me', function(rsp){
         if (rsp.ret === 0) {
 
             var gradient = new Rainbow();
@@ -167,7 +167,7 @@ $(function() {
         }
 
 
-        $.getJSON('/api/get_score/me', function(rst){
+        $.getJSON('http://api.xingwu.me/proposal/get_score/me', function(rst){
             var avg_score = rst.data;
             hchart.series[0].setData([avg_score.morality, avg_score.intelligence, avg_score.shape, avg_score.look, avg_score.career]);
             refreshLabels(rst.data);
@@ -177,7 +177,7 @@ $(function() {
 
     $('#comment-form').submit(function(evt) {
         event.preventDefault();
-        $.post('/api/add_comment', {id:'me', comment:$('#textField').val()});
+        $.post('http://api.xingwu.me/proposal/add_comment', {id:'me', comment:$('#textField').val()});
         $('#tagBox').modal('hide');
 
         var tag = $("<span>", {
