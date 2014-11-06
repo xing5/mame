@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="fullheight"></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Marry me!</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="stylesheets/style.css" rel="stylesheet">
+  <script src="javascripts/ga.js"></script>
+</head>
+<body style="background-color:#dcdcdc" class="fullheight">
+  <div style="padding:5px" class="container fullheight">
+    <div id="letter" class="letterbox">
+      <p> </p>
+      <p> </p>
+      <p> </p>
+      <p> </p>
+      <p>仅供程娅苹查阅，谢谢 ^_^</p>
+      <p> </p>
+      <p> <a href="/" class="btn button-default">返回</a></p>
+      <p> </p>
+      <p> </p>
+      <p> </p>
+    </div>
+  </div>
+  <div id="pwdBox" tabindex="-1" role="dialog" aria-labelledby="tagBoxLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="pwd-form" role="form">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+            <h5 id="myModalLabel">请输入伍行的银行卡密码：</h5>
+          </div>
+          <div class="modal-body">
+            <p> 
+              <div class="form-group">
+                <div for="textField" class="label sr-only"> </div>
+                <input id="textField" type="password" class="form-control">
+              </div>
+            </p>
+          </div>
+          <div class="modal-footer"><a data-dismiss="modal" aria-hidden="true" class="btn">返回</a>
+            <button id="pwdBtn" type="submit" class="btn btn-primary">提交</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="javascripts/md5.js"></script>
+  <script src="javascripts/letter.js"></script>
+</body>

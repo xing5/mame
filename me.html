@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Marry me!</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="stylesheets/bootstrap-slider.min.css" rel="stylesheet">
+  <link href="stylesheets/animate+animo.css" rel="stylesheet">
+  <link href="stylesheets/style.css" rel="stylesheet">
+  <script src="javascripts/ga.js"></script>
+</head>
+<body style="background:#fafafa">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="media"><a href="#" class="pull-left"><img src="images/me.jpg" class="media-object dp img-circle profile-img"></a>
+          <div id="meHead" class="media-body">
+            <h4 class="media-heading">伍行 <small>1988/02/29</small></h4>
+            <hr style="margin:8px auto"><a href="http://xingwu.qzone.qq.com/" class="btn btn-default btn-circle-small"> <i class="fa social-icon fa-qq"></i></a><a href="https://www.facebook.com/wuxing" class="btn btn-default btn-circle-small"><i class="fa social-icon fa-facebook"></i></a><a href="http://instagram.com/calka" class="btn btn-default btn-circle-small"><i class="fa social-icon fa-instagram"></i></a><a href="mailto:xingwu.cn@gmail.com" class="btn btn-default btn-circle-small"><i class="fa social-icon fa-envelope"></i></a><a href="https://www.linkedin.com/in/xingwu" class="btn btn-default btn-circle-small"><i class="fa social-icon fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div id="radar" class="col-xs-8"></div>
+            <div id="detail" class="col-xs-4">
+              <p> <span class="radar-type">品德 </span><span id="moralityRst" class="label label-warning">万里挑一</span></p>
+              <p> <span class="radar-type">智商 </span><span id="intelligenceRst" class="label label-warning">万里挑一</span></p>
+              <p> <span class="radar-type">身材 </span><span id="shapeRst" class="label label-warning">万里挑一</span></p>
+              <p> <span class="radar-type">美貌 </span><span id="lookRst" class="label label-warning">万里挑一</span></p>
+              <p> <span class="radar-type">工作 </span><span id="careerRst" class="label label-warning">万里挑一</span></p>
+            </div>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item"><span class="text">请就伍行在你们心中的伟岸形象如实评价。</span><a id="evalBtn" href="#myModal" role="button" data-toggle="modal" class="btn btn-primary">打分</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading"><span class="text">朋友们眼中的伍行：</span>
+            <button href="#tagBox" role="button" data-toggle="modal" class="btn btn-primary alignright">添加</button>
+          </div>
+          <div id="comments" class="panel-body"></div>
+        </div>
+      </div>
+    </div>
+  </div><span id="plusone" style="display:none;" class="animation label-danger label">+1</span>
+  <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="radar-form" action="/api/set_score" method="post">
+          <input id="scoreId" type="hidden" name="id" value="me">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+            <h5 id="myModalLabel">请依中华传统择偶标准对伍行进行评价：</h5>
+          </div>
+          <div class="modal-body">
+            <p class="slideP"> <span class="radar-type">品德 </span><span id="moralityLabel" class="label label-warning radar-tag">德高望重</span>
+              <input id="morality" data-slider-id="moralitySlider" type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name="morality">
+            </p>
+            <p class="slideP"><span class="radar-type">智商 </span><span id="intelligenceLabel" class="label label-warning radar-tag">万中无一</span>
+              <input id="intelligence" data-slider-id="intelligenceSlider" type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name="intelligence">
+            </p>
+            <p class="slideP"> <span class="radar-type">身材 </span><span id="shapeLabel" class="label label-warning radar-tag">孙杨</span>
+              <input id="shape" data-slider-id="shapeSlider" type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name="shape">
+            </p>
+            <p class="slideP"> <span class="radar-type">美貌 </span><span id="lookLabel" class="label label-warning radar-tag">吴彦祖</span>
+              <input id="look" data-slider-id="lookSlider" type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name="look">
+            </p>
+            <p class="slideP"> <span class="radar-type">工作 </span><span id="careerLabel" class="label label-warning radar-tag">富甲一方</span>
+              <input id="career" data-slider-id="careerSlider" type="text" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="5" data-slider-tooltip="hide" name="career">
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button data-dismiss="modal" aria-hidden="true" class="btn">关闭</button>
+            <button type="submit" class="btn btn-primary">提交</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="tagBox" tabindex="-1" role="dialog" aria-labelledby="tagBoxLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="comment-form" role="form">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+            <h5 id="myModalLabel">请用10字以内的词语描述伍行：</h5>
+          </div>
+          <div class="modal-body">
+            <p> 
+              <div class="form-group">
+                <div for="textField" class="label sr-only"> </div>
+                <input id="textField" type="text" placeholder="提示：英明神武，虚怀若谷等" class="form-control">
+              </div>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button data-dismiss="modal" aria-hidden="true" class="btn">关闭</button>
+            <button id="tagBtn" type="submit" class="btn btn-primary">提交</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="javascripts/bootstrap-slider.min.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/highcharts-more.js"></script>
+  <script src="javascripts/animo.js"></script>
+  <script src="javascripts/rainbowvis.js"></script>
+  <script src="javascripts/me.js"></script>
+</body>
