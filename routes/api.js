@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require('../modules/db');
 
 router.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "proposal.xingwu.me");
+    res.header("Access-Control-Allow-Origin", "http://proposal.xingwu.me");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
 });
