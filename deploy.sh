@@ -1,5 +1,7 @@
 #!/bin/bash
 
-jade views -P -o deploy/
+jade views/{index,her,me,story,letter}.jade -P -o deploy/
+sed -i '' -e 's/\(href="\/\)\([^"]*\)/\1\2\.html/g' deploy/index.html
 cp -rf public/* deploy/
-grep 'api/' javascripts/*.js | awk -F ':' '{print $1}'|uniq | xargs -I xx sed -i '' -e 's/\/api/http:\/\/api.xingwu.me\/proposal/g' xx
+rm -rf deploy/images/*.psd
+grep '/proposal/' deploy/javascripts/*.js | awk -F ':' '{print $1}'|uniq | xargs -I xx sed -i '' -e 's/\/proposal/http:\/\/api.xingwu.me\/proposal/g' xx

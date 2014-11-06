@@ -75,10 +75,10 @@ $(function() {
         if (orig.length === 2 && parseInt(orig[1])) {
             $(this).text(orig[0] + ' | ' + (parseInt(orig[1])+1) );
         }
-        $.post('/api/add_comment', {id: 'yy', comment: orig[0]});
+        $.post('/proposal/add_comment', {id: 'yy', comment: orig[0]});
     }
     
-    $.getJSON('/api/get_comments/yy', function(rsp){
+    $.getJSON('/proposal/get_comments/yy', function(rsp){
         if (rsp.ret === 0) {
 
             var gradient = new Rainbow();
@@ -103,7 +103,7 @@ $(function() {
 
     $('#comment-form').submit(function(evt) {
         evt.preventDefault();
-        $.post('/api/add_comment', {id:'yy', comment:$('#textField').val()});
+        $.post('/proposal/add_comment', {id:'yy', comment:$('#textField').val()});
         $('#tagBox').modal('hide');
 
         var tag = $("<span>", {
