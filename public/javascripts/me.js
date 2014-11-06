@@ -21,9 +21,9 @@ $(function() {
             .animo({animation: 'fadeOutUp', duration: 0.5}, function(){
                 $('#plusone').hide();
             });
-        var orig = $(this).text().split(' | ');
+        var orig = $(this).text().split(' x ');
         if (orig.length === 2 && parseInt(orig[1])) {
-            $(this).text(orig[0] + ' | ' + (parseInt(orig[1])+1) );
+            $(this).text(orig[0] + ' x ' + (parseInt(orig[1])+1) );
         }
         $.post('/proposal/add_comment', {id: 'me', comment: orig[0]});
     }
@@ -116,7 +116,7 @@ $(function() {
                     class: "label tag"
                 })
                 tag.css({'background-color': '#'+gradient.colorAt(val)});
-                tag.text(key + ' | ' + val);
+                tag.text(key + ' x ' + val);
                 tag.appendTo('#comments');
             });
         }
@@ -154,7 +154,7 @@ $(function() {
             look: parseInt($('#look').val()),
             career: parseInt($('#career').val())
         };
-        $.post($(this).attr('action'), new_score);
+        $.post('/proposal/set_score', new_score);
         $('#myModal').modal('hide');
         if (hchart.series.length > 1) {
             hchart.series[1].setData([new_score.morality, new_score.intelligence, new_score.shape, new_score.look, new_score.career]);
@@ -183,7 +183,7 @@ $(function() {
         var tag = $("<span>", {
             class: "label label-warning tag"
         })
-        tag.text($('#textField').val() + ' | ' + 1);
+        tag.text($('#textField').val() + ' x ' + 1);
         tag.on('click', tagEventHandler);
         tag.appendTo('#comments');
     });

@@ -73,7 +73,7 @@ head
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
       .modal-dialog
         .modal-content
-          form(id='radar-form', action='/api/set_score', method='post')
+          form(id='radar-form' role='form')
             input(id='scoreId' type='hidden' name='id' value='me')
             .modal-header
                 button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
