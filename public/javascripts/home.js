@@ -7,6 +7,11 @@ $(function() {
     //         timing:"ease-in-out"
     // });
     //$('#roseNum').text($('#roseCanvas').outerHeight());
+    $.getJSON("/api/get_rose", function(data){
+        if (data.ret == 0) {
+            $('#roseNum').text(data.roseNum);
+        }
+    });
     $('#roseBtn').on('click', function(e) {
         $.post("/api/add_rose");
         $('#roseIcon').animo({

@@ -4,9 +4,7 @@ var db = require('../modules/db')
 
 /* GET home page. */
 router.get('/', function(req, res) {
-    db.getRose(function(num){
-        res.render('index', { roseNum: num?num:0});
-    });
+  res.render('index', {title: 'Mame'})
 });
 
 router.get('/me', function(req, res) {

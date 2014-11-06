@@ -8,6 +8,12 @@ router.all('/add_rose', function(req, res) {
     res.send({ret:0});
 });
 
+router.all('/get_rose', function(req, res) {
+    db.getRose(function(num){
+        res.send({ ret:0, roseNum: num?num:0});
+    });
+});
+
 router.all('/get_score/:id', function(req, res){
     db.getAllScore(req.param('id'), function(score){
         res.send({ret:0, data:score});
