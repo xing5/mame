@@ -3,7 +3,7 @@ $(function() {
 
     $('#pwd-form').submit(function(evt) {
         evt.preventDefault();
-        $.get('/api/get_letter', {password:md5($('#textField').val())}, function(rst){
+        $.get('/proposal/get_letter', {password:md5($('#textField').val())}, function(rst){
             if (rst && rst.ret == 0) {
                 $('#letter').html('<p>' + rst.data + '</p>')
                 $('#pwdBox').modal('hide');
