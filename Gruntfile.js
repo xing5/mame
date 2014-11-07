@@ -34,6 +34,7 @@ module.exports = function (grunt) {
                 src: [
                     'public/javascripts/animo.js',
                     'public/javascripts/rainbowvis.js',
+                    'public/javascripts/bootstrap-slider.min.js',
                     'public/javascripts/me.js',
                     'public/javascripts/wxshare.js',
                     'public/javascripts/ga.js'
@@ -47,6 +48,7 @@ module.exports = function (grunt) {
                 src: [
                     'public/javascripts/animo.js',
                     'public/javascripts/rainbowvis.js',
+                    'public/javascripts/bootstrap-slider.min.js',
                     'public/javascripts/her.js',
                     'public/javascripts/wxshare.js',
                     'public/javascripts/ga.js'
