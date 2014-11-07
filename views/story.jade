@@ -15,6 +15,7 @@ head
     .container.fullheight.nopadding
         #carouselStory.carousel.slide(data-ride='carousel')
             ol.carousel-indicators
+            //
                 li.active(data-target='#carouselStory',data-slide-to='0')
                 li(data-target='#carouselStory',data-slide-to='1')
                 li(data-target='#carouselStory',data-slide-to='2')
@@ -67,21 +68,20 @@ head
                     img.img-responsive(src='images/export/p10-autumn.jpg', alt='Love Story')
                     .carousel-caption
                         | 来到北美之后，距离和学业让我们有时两三个月才能见上一面，环境很美，心却孤独。
-                .item
+                #lastPage.item
                     img.img-responsive(src='images/export/p11-marry.jpg', alt='Love Story')
                     .carousel-caption
                         | 2015年要到了，转眼又将毕业，无论去哪，这次我们一定会在一起。（完）
-                        a(href='/') 返回
+                        a(href='/') 祝福
             a.left.carousel-control(href='#carouselStory', role='button', data-slide='prev')
                 span.glyphicon.glyphicon-chevron-left
-            a.right.carousel-control(href='#carouselStory', role='button', data-slide='next')
+            a#rightBtn.right.carousel-control(href='#carouselStory', role='button', data-slide='next')
                 span.glyphicon.glyphicon-chevron-right
 
     script(src='https://code.jquery.com/jquery-2.1.1.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
-    script(type='text/javascript').
-        $('#carouselStory').carousel({interval: 4});
     // build:js javascripts/story.min.js 
+    script(src='javascripts/story.js')
     script(src='javascripts/wxshare.js')
     script(src='javascripts/ga.js')
     // /build

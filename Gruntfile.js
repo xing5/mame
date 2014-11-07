@@ -71,6 +71,7 @@ module.exports = function (grunt) {
                     banner: '/*! story.min.js <%= grunt.template.today("yyyy-mm-dd") %> */\n'
                 },
                 src: [
+                    'public/javascripts/story.js',
                     'public/javascripts/wxshare.js',
                     'public/javascripts/ga.js'
                 ],

@@ -175,7 +175,7 @@ $(function() {
 
     });
 
-    $('#comment-form').submit(function(evt) {
+    $('#comment-form').submit(function(event) {
         event.preventDefault();
         $.post('/proposal/add_comment', {id:'me', comment:$('#textField').val()});
         $('#tagBox').modal('hide');
