@@ -9,7 +9,7 @@ module.exports = function (grunt) {
                     banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
                 },
                 expand: false,
-                src: ['public/stylesheets/*.css', '!public/stylesheets/*.min.css'],
+                src: ['public/stylesheets/*.css'],
                 dest: 'deploy/stylesheets/style.min.css'
             },
         },
