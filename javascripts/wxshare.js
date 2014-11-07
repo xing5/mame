@@ -1,5 +1,5 @@
 
-var imgUrl = '/images/wx.jpg';
+var imgUrl = 'http://proposal.xingwu.me/images/wx.jpg';
 var lineLink = 'http://proposal.xingwu.me';
 var descContent = "没想到伍行求婚的对象竟然是...？朋友们进来点个祝福吧:)";
 var shareTitle = '程序员有特别的求婚姿势：伍行向她求婚啦，进来点个祝福吧！';
