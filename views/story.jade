@@ -8,8 +8,9 @@ head
     title Marry me!
 
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')
+    // build:css stylesheets/style.min.css 
     link(href='stylesheets/style.css', rel='stylesheet')
-    script(src='javascripts/ga.js')
+    // /build 
   body.fullheight
     .container.fullheight.nopadding
         #carouselStory.carousel.slide(data-ride='carousel')
@@ -79,6 +80,8 @@ head
     script(src='https://code.jquery.com/jquery-2.1.1.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
     script(type='text/javascript').
-        $('#carouselStory').carousel({interval: false});
+        $('#carouselStory').carousel({interval: 4});
+    // build:js javascripts/story.min.js 
     script(src='javascripts/wxshare.js')
     script(src='javascripts/ga.js')
+    // /build

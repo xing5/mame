@@ -8,8 +8,10 @@ head
     title Marry me!
 
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')
+
+    // build:css stylesheets/style.min.css 
     link(href='stylesheets/style.css', rel='stylesheet')
-    script(src='javascripts/ga.js')
+    // /build
   body.fullheight(style="background-color:#dcdcdc")
     .container.fullheight(style="padding:5px")
         #letter.letterbox
@@ -43,6 +45,9 @@ head
 
     script(src='https://code.jquery.com/jquery-2.1.1.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+
+    // build:js javascripts/letter.min.js 
     script(src='javascripts/md5.js')
     script(src='javascripts/letter.js')
     script(src='javascripts/ga.js')
+    // /build

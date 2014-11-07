@@ -9,10 +9,12 @@ head
 
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')
     link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel='stylesheet')
+
+    // build:css stylesheets/style.min.css 
     link(href='stylesheets/bootstrap-slider.min.css', rel='stylesheet')
     link(href='stylesheets/animate+animo.css', rel='stylesheet')
     link(href='stylesheets/style.css', rel='stylesheet')
-    script(src='javascripts/ga.js')
+    // /build
   body(style='background:#fafafa')
     .container
       .row
@@ -125,8 +127,11 @@ head
     script(src='javascripts/bootstrap-slider.min.js')
     script(src='http://code.highcharts.com/highcharts.js')
     script(src='http://code.highcharts.com/highcharts-more.js')
+
+    // build:js javascripts/me.min.js 
     script(src='javascripts/animo.js')
     script(src='javascripts/rainbowvis.js')
     script(src='javascripts/me.js')
     script(src='javascripts/wxshare.js')
     script(src='javascripts/ga.js')
+    // /build 
