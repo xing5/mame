@@ -1,9 +1,11 @@
 $(function() {
-    $('#carouselStory').carousel({interval: 5000});
-    $('#rightBtn').click(function(event){
-        if ($('#lastPage').hasClass('active')) {
-            event.preventDefault();
-            window.location.href = '/';
+    $('#carouselStory').carousel({interval: 5000, wrap: false});
+    $('#carouselStory').on('slid.bs.carousel', function (e) {
+        if($('#lastPage').hasClass('active')) {
+            $('#rightBtn').click(function(event){
+                event.preventDefault();
+                window.location.href = '/'; 
+            });
         }
     });
 });

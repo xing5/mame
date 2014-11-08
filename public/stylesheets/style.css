@@ -289,5 +289,6 @@ button.alignright, a.alignright{
     transform: skew(5deg) rotate(5deg);
 }
 .carousel-caption a {
-    color: #cfcfcf;
+    color: #ec971f;
+    text-decoration: underline;
 }
