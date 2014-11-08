@@ -1,3 +1,4 @@
+(function(){
 
 var imgUrl = 'http://proposal.xingwu.me/images/wx.jpg';
 var lineLink = 'http://proposal.xingwu.me/non-mobile.html';
@@ -53,3 +54,4 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
         shareWeibo();
     });
 }, false);
+})();

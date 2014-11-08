@@ -71,9 +71,9 @@ $(function() {
             .animo({animation: 'fadeOutUp', duration: 0.5}, function(){
                 $('#plusone').hide();
             });
-        var orig = $(this).text().split(' | ');
+        var orig = $(this).text().split(' x ');
         if (orig.length === 2 && parseInt(orig[1])) {
-            $(this).text(orig[0] + ' | ' + (parseInt(orig[1])+1) );
+            $(this).text(orig[0] + ' x ' + (parseInt(orig[1])+1) );
         }
         $.post('/proposal/add_comment', {id: 'yy', comment: orig[0]});
     }
@@ -93,7 +93,7 @@ $(function() {
                     class: "label tag"
                 })
                 tag.css({'background-color': '#'+gradient.colorAt(val)});
-                tag.text(key + ' | ' + val);
+                tag.text(key + ' x ' + val);
                 tag.appendTo('#comments');
             });
         }
@@ -109,7 +109,7 @@ $(function() {
         var tag = $("<span>", {
             class: "label label-warning tag"
         })
-        tag.text($('#textField').val() + ' | ' + 1);
+        tag.text($('#textField').val() + ' x ' + 1);
         tag.on('click', tagEventHandler);
         tag.appendTo('#comments');
     });
