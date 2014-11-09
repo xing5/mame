@@ -103,14 +103,26 @@ $(function() {
 
     $('#comment-form').submit(function(evt) {
         evt.preventDefault();
-        $.post('/proposal/add_comment', {id:'yy', comment:$('#textField').val()});
-        $('#tagBox').modal('hide');
 
-        var tag = $("<span>", {
-            class: "label label-warning tag"
-        })
-        tag.text($('#textField').val() + ' x ' + 1);
-        tag.on('click', tagEventHandler);
-        tag.appendTo('#comments');
+        $.post('/proposal/add_comment', {id:'yy', comment:$('#textField').val()}, function(rst){
+
+            if (rst && rst.ret === 0) {
+
+                $('#tagBox').modal('hide');
+
+                var tag = $("<span>", {
+                    class: "label label-warning tag"
+                })
+                tag.text($('#textField').val() + ' x ' + 1);
+                tag.on('click', tagEventHandler);
+                tag.appendTo('#comments');
+            } else if (rst && rst.ret === -1){
+                $('#tagModalLabel').css({'color':'red'}).text('您输入的描述太长，需16字以内:(');
+            } else if (rst && rst.ret === -2){
+                $('#tagModalLabel').css({'color':'red'}).text('空？试着多输入点吧:(');
+            } else {
+                $('#tagModalLabel').css({'color':'red'}).text('你干了啥？系统错误了！');
+            }
+        });
     });
 });

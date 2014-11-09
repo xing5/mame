@@ -61,8 +61,12 @@ router.all('/add_comment', function(req, res){
         res.send({ret:-1002, msg:'invalid request'});
         return;
     }
-    if (req.param('comment').length > 10) {
-        res.send({ret:-1, msg:'comment longer than 10 charactors are not supported'});
+    if (req.param('comment').length > 16) {
+        res.send({ret:-1, msg:'comment longer than 16 charactors are not supported'});
+        return;
+    }
+    if (req.param('comment').trim().length === 0) {
+        res.send({ret:-2, msg:'empty input'});
         return;
     }
     db.addComment(req.param('id'), req.param('comment').trim()); 

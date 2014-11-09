@@ -74,12 +74,13 @@ head
           form#comment-form(role='form')
             .modal-header
                 button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
-                h5#myModalLabel 请点击能正确描述程娅苹的词语：
+                h5#tagModalLabel 请点击能正确描述程娅苹的词语：
             .modal-body
                   p  
                     .form-group
                         .label.sr-only(for='textField') 
                         input#textField.form-control(type='text',placeholder='提示：请客观描述')
+                        input(type='submit',style='margin-left:-1800px;position:absolute')
             .modal-footer
                 button.btn(data-dismiss='modal', aria-hidden='true') 关闭
                 button#tagBtn.btn.btn-primary(type='submit') 提交
